@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
@@ -54,10 +54,16 @@
     controller4.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/home_selected@2x.png"];
     
     [tabBarController setViewControllers:@[navigationController, controller2 ,controller3 , controller4]];
+    tabBarController.delegate = self;
     
     self.window.rootViewController = tabBarController;
+    self.window.makeKeyAndVisible;
     
     return YES;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+//    NSLog(@"did select");
 }
 
 

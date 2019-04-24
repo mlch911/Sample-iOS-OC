@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 
+@interface TestView : UIView
+
+@end
+
 @implementation TestView
 
 - (instancetype)init {
@@ -19,7 +23,7 @@
 }
 
 - (void)willMoveToSuperview:(nullable UIView *)newSuperview{
-        [super willMoveToSuperview: newSuperview];
+    [super willMoveToSuperview: newSuperview];
 }
 - (void)didMoveToSuperview{
     [super didMoveToSuperview];
@@ -64,23 +68,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    TestView *view1 = [[TestView alloc] init];
-    view1.frame = CGRectMake(100, 100, 100, 100);
-    view1.backgroundColor = [UIColor redColor];
-    [self.view addSubview: view1];
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
-    [view1 addGestureRecognizer:tapGesture];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:tableView];
 }
-
-- (void)pushController {
-    UIViewController *viewController = [[UIViewController alloc] init];
-    viewController.view.backgroundColor = [UIColor whiteColor];
-    viewController.navigationItem.title = @"内容";
-    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStyleDone target:self action:nil];
-    
-    [self.navigationController pushViewController:viewController animated:YES];
-}
-
 
 @end
