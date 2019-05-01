@@ -37,7 +37,7 @@
 //
 //@end
 
-@interface ViewController () <UITableViewDataSource>
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -72,16 +72,26 @@
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:tableView];
     
-    tableView.rowHeight = 200;
+//    tableView.rowHeight = 200;
     tableView.dataSource = self;
+    tableView.delegate = self;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return 2000;
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIViewController *controller = [[UIViewController alloc] init];
+    controller.view.backgroundColor = [UIColor whiteColor];
+    controller.title = [NSString stringWithFormat: @"第%@行", @(indexPath.row)];
+    [self.navigationController pushViewController:controller animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    创建可重用cell
@@ -90,8 +100,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id"];
     }
     
-    cell.textLabel.text = [[NSString alloc] initWithFormat:@"主标题：第%ld行", (long)indexPath.row + 1];
-    cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"副标题：第%ld行", (long)indexPath.row + 1];
+    cell.textLabel.text = [[NSString alloc] initWithFormat:@"主标题：第%@行", @(indexPath.row)];
+    cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"副标题：第%ld行", (long)indexPath.row];
     cell.imageView.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
     
     return cell;
