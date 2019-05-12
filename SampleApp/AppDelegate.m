@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "VideoViewController.h"
+#import "RecommendViewController.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -38,12 +39,8 @@
 //    controller1.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
     
     VideoViewController *videoController = [[VideoViewController alloc] init];
-    
-    UIViewController *controller3 = [[UIViewController alloc] init];
-    controller3.view.backgroundColor = [UIColor greenColor];
-    controller3.tabBarItem.title = @"推荐";
-    controller3.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/like@2x.png"];
-    controller3.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/like_selected@2x.png"];
+	
+	RecommendViewController *recommendController = [[RecommendViewController alloc] init];
     
     UIViewController *controller4 = [[UIViewController alloc] init];
     controller4.view.backgroundColor = [UIColor yellowColor];
@@ -51,7 +48,7 @@
     controller4.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/home@2x.png"];
     controller4.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/home_selected@2x.png"];
     
-    [tabBarController setViewControllers:@[viewController, videoController ,controller3 , controller4]];
+    [tabBarController setViewControllers:@[viewController, videoController ,recommendController , controller4]];
     tabBarController.delegate = self;
     
     self.window.rootViewController = navigationController;

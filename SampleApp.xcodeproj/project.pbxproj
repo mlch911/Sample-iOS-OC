@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F70FBCBB228805120091705F /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F70FBCBA228805120091705F /* RecommendViewController.m */; };
+		F711644C22880D5400A05E00 /* NormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F711644B22880D5400A05E00 /* NormalTableViewCell.m */; };
 		F7302AB422799900004A3F80 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7302AB322799900004A3F80 /* VideoViewController.m */; };
 		F77238FD226C36E700461D0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F77238FC226C36E700461D0A /* AppDelegate.m */; };
 		F7723900226C36E700461D0A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77238FF226C36E700461D0A /* ViewController.m */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F70FBCB9228805120091705F /* RecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		F70FBCBA228805120091705F /* RecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		F711644A22880D5400A05E00 /* NormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalTableViewCell.h; sourceTree = "<group>"; };
+		F711644B22880D5400A05E00 /* NormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalTableViewCell.m; sourceTree = "<group>"; };
 		F7302AB222799900004A3F80 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		F7302AB322799900004A3F80 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		F77238F8226C36E700461D0A /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +78,10 @@
 				F772390A226C36E900461D0A /* main.m */,
 				F7302AB222799900004A3F80 /* VideoViewController.h */,
 				F7302AB322799900004A3F80 /* VideoViewController.m */,
+				F70FBCB9228805120091705F /* RecommendViewController.h */,
+				F70FBCBA228805120091705F /* RecommendViewController.m */,
+				F711644A22880D5400A05E00 /* NormalTableViewCell.h */,
+				F711644B22880D5400A05E00 /* NormalTableViewCell.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -147,8 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7723900226C36E700461D0A /* ViewController.m in Sources */,
+				F70FBCBB228805120091705F /* RecommendViewController.m in Sources */,
 				F772390B226C36E900461D0A /* main.m in Sources */,
 				F7302AB422799900004A3F80 /* VideoViewController.m in Sources */,
+				F711644C22880D5400A05E00 /* NormalTableViewCell.m in Sources */,
 				F77238FD226C36E700461D0A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
